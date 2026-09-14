@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Sika Hermina C.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #1f1f1f;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== COULEURS PALETTE ===== */
+        :root {
+            --primary-yellow: #FFC107;
+            --secondary-violet: #2D1B4E;
+            --accent-pink: #E84D8E;
+            --accent-teal: #00BCD4;
+            --text-primary: #1f1f1f;
+            --text-secondary: #666666;
+            --bg-light: #F5F5F5;
+            --white: #ffffff;
+        }
+
+        /* ===== TYPOGRAPHIE ===== */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: var(--secondary-violet);
+        }
+
+        h2 {
+            font-size: 32px;
+            color: var(--secondary-violet);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: var(--secondary-violet);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 60px 50px;
+            margin: 0;
+        }
+
+        /* ===== HERO / COVER ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-violet) 0%, #3D2560 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--primary-yellow);
+            opacity: 0.1;
+            top: -100px;
+            right: -50px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--primary-yellow);
+            opacity: 0.08;
+            bottom: -80px;
+            left: 50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            color: var(--white);
+            font-size: 56px;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: var(--secondary-violet);
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            margin-top: 1rem;
+        }
+
+        /* ===== INTRO SECTION ===== */
+        .intro {
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .intro-toc {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .intro-toc h2 {
+            font-size: 28px;
+            margin-bottom: 2rem;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            font-size: 14px;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .intro-content {
+            padding: 40px;
+        }
+
+        .accent-line {
+            width: 4px;
+            height: 40px;
+            background: var(--primary-yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-content h3 {
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== KEY POINTS ===== */
+        .key-points {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .key-point {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .key-point-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .key-point-text h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--secondary-violet);
+            margin-bottom: 0.5rem;
+        }
+
+        .key-point-text p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* ===== CASE STUDIES ===== */
+        .case-studies {
+            background: var(--bg-light);
+        }
+
+        .case-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-left: 4px solid var(--primary-yellow);
+            border-radius: 8px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .case-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .case-badge {
+            display: inline-block;
+            background: var(--primary-yellow);
+            color: var(--secondary-violet);
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            width: fit-content;
+        }
+
+        .case-title {
+            font-size: 24px;
+            color: var(--secondary-violet);
+            margin: 0;
+        }
+
+        .case-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .case-visual {
+            background: linear-gradient(135deg, var(--accent-teal) 0%, #00A8C8 100%);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: var(--white);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .case-number {
+            font-size: 64px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-yellow);
+        }
+
+        .case-label {
+            font-size: 16px;
+            color: var(--white);
+            margin-top: 10px;
+        }
+
+        .case-metrics {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .case-metrics-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .case-metrics-row:last-child {
+            border-bottom: none;
+        }
+
+        .case-metrics-label {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .case-metrics-value {
+            color: var(--text-primary);
+        }
+
+        .case-right {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .case-strategy h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary-violet);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-strategy ul {
+            list-style: none;
+            font-size: 13px;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+
+        .case-strategy ul li::before {
+            content: '→ ';
+            color: var(--primary-yellow);
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .case-insight {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid var(--primary-yellow);
+            padding: 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* ===== MÉTHODE ===== */
+        .methodology {
+            background: var(--bg-light);
+        }
+
+        .methodology h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .methodology-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            background: var(--white);
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary-violet);
+        }
+
+        .step h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary-violet);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .step ul {
+            list-style: none;
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .step-insight {
+            font-size: 12px;
+            color: var(--primary-yellow);
+            margin-top: 15px;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* ===== COMPÉTENCES ===== */
+        .skills {
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .skills-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .skill-category h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary-violet);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-category p {
+            font-size: 13px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .skill-category p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .tool-set {
+            padding: 0;
+        }
+
+        .tool-set h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-pink);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tool-set p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: linear-gradient(135deg, var(--secondary-violet) 0%, #3D2560 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 50px;
+        }
+
+        .contact h2 {
+            color: var(--white);
+            font-size: 48px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-intro {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-icon {
+            font-size: 32px;
+        }
+
+        .contact-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .contact-info {
+            font-size: 15px;
+            color: var(--primary-yellow);
+            font-weight: 600;
+        }
+
+        .contact-footer {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .case-card {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            section {
+                padding: 40px 25px;
+            }
+
+            .hero {
+                padding: 60px 25px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== UTILITIES ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO / COVER -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Je transforme<br/>l'attention<br/>en résultats<br/>mesurables.</h1>
+        <div class="hero-tagline">Acquisition • Lead Generation • Conversion</div>
+        <p class="hero-description">
+            Stratégie d'acquisition, génération de leads et conversion : du paid à l'organique, de l'emailing à l'événementiel. Je conçois des dispositifs qui se mesurent — et qui délivrent.
+        </p>
+        <div class="hero-badge">✨ 3+ ans • Acquisition • Lead Gen • Conversion • Dispo Sept 2026</div>
+    </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section class="intro">
+    <div class="intro-toc">
+        <h2>Sommaire</h2>
+        <ul class="toc-list">
+            <li><strong>Qui je suis</strong></li>
+            <li>Cas #1 : Salon Gourmet Sélection</li>
+            <li>Cas #2 : Salon du Fromage</li>
+            <li>Cas #3 : Orphéopolis</li>
+            <li>Cas #4 : Vivoptim Solutions</li>
+            <li>Ma méthode</li>
+            <li>Compétences & outils</li>
+            <li>Parlons résultats</li>
+        </ul>
+    </div>
+    <div class="intro-content">
+        <div class="accent-line"></div>
+        <h3>Qui suis-je ?</h3>
+        <p><strong>Sika Hermina C.</strong> | Chargée de Communication Digitale</p>
+        <p>3+ ans d'expérience en stratégie d'acquisition, génération de leads et conversion. Spécialisée dans la cohérence des parcours (landing page → campagne → CRM) et la mesure des résultats.</p>
+        <p>Secteurs : B2B événementiel, santé-prévention, associatif.</p>
+        <p>Disponible pour rejoindre une équipe dès septembre 2026.</p>
+        
+        <div class="key-points">
+            <div class="key-point">
+                <div class="key-point-icon">🎯</div>
+                <div class="key-point-text">
+                    <h4>Stratégie orientée performance</h4>
+                    <p>Chaque campagne a des objectifs SMART et un ROI défini.</p>
+                </div>
+            </div>
+            <div class="key-point">
+                <div class="key-point-icon">📊</div>
+                <div class="key-point-text">
+                    <h4>Données avant intuitions</h4>
+                    <p>Je pars des audits, pas des hypothèses.</p>
+                </div>
+            </div>
+            <div class="key-point">
+                <div class="key-point-icon">🔄</div>
+                <div class="key-point-text">
+                    <h4>Optimisation continue</h4>
+                    <p>Les résultats guident les décisions suivantes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CAS CLIENTS -->
+<section class="case-studies">
+    <h2 style="text-align: left; padding-left: 25px;">💼 Cas clients & résultats</h2>
+    
+    <div class="case-grid">
+        <!-- CAS 1 -->
+        <div class="case-card">
+            <div class="case-left">
+                <div class="case-badge">ÉVÉNEMENTIEL B2B</div>
+                <h3 class="case-title" style="margin-top: 0;">Salon Gourmet Sélection</h3>
+                <p class="case-subtitle">4 500 leads visiteurs générés • 100 % des KPI atteints</p>
+                <div class="case-visual">
+                    <div class="case-number">4500</div>
+                    <div class="case-label">leads visiteurs générés</div>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Durée</span>
+                        <span class="case-metrics-value">Fin 2024 - Début 2025</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Budget</span>
+                        <span class="case-metrics-value">Performance Max</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">CPA</span>
+                        <span class="case-metrics-value">83,8 €</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-right">
+                <div class="case-strategy">
+                    <h4>Dispositif</h4>
+                    <ul>
+                        <li>Landing page Performance Max + Typeform → Salesforce</li>
+                        <li>Campagnes paid alignées (banner → page → formulaire)</li>
+                        <li>Optimisation SEO pages « Exposer »</li>
+                        <li>Activations LinkedIn (contenu, parrainage, concours)</li>
+                    </ul>
+                </div>
+                <div class="case-strategy">
+                    <h4>Résultats</h4>
+                    <ul>
+                        <li>4 500 leads visiteurs (100% atteint)</li>
+                        <li>70 leads exposants B2B</li>
+                        <li>+15 % d'abonnés sociaux</li>
+                        <li>85 000 sessions (objectif +15 %)</li>
+                    </ul>
+                </div>
+                <div class="case-insight">
+                    <strong>Ce que j'en retiens :</strong> Une acquisition performante repose sur l'alignement parfait landing page ↔ campagne ↔ CRM. Chaque lead doit être traçable du clic jusqu'à l'équipe commerciale.
+                </div>
+            </div>
+        </div>
+
+        <!-- CAS 2 -->
+        <div class="case-card">
+            <div class="case-left">
+                <div class="case-badge" style="background: var(--accent-teal); color: var(--white);">SOCIAL MEDIA</div>
+                <h3 class="case-title" style="margin-top: 0;">Salon du Fromage & Produits Laitiers</h3>
+                <p class="case-subtitle">+157 % de nouveaux abonnés • 100 % organique</p>
+                <div class="case-visual" style="background: linear-gradient(135deg, var(--accent-pink) 0%, #D63772 100%);">
+                    <div class="case-number">+157%</div>
+                    <div class="case-label">croissance Instagram</div>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Période</span>
+                        <span class="case-metrics-value">2024</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Budget</span>
+                        <span class="case-metrics-value">0 € (organique)</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Interactions</span>
+                        <span class="case-metrics-value">955</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-right">
+                <div class="case-strategy">
+                    <h4>Dispositif</h4>
+                    <ul>
+                        <li>Portraits d'artisans fromagers</li>
+                        <li>Contenus pédagogiques (terroirs, types)</li>
+                        <li>Formats événementiels (save-the-date, rétrospectives)</li>
+                        <li>Analyse hebdomadaire & itération</li>
+                    </ul>
+                </div>
+                <div class="case-strategy">
+                    <h4>Résultats</h4>
+                    <ul>
+                        <li>+278 followers Instagram (+157 %)</li>
+                        <li>955 interactions</li>
+                        <li>66,6 K vues cumulées (FB + IG)</li>
+                        <li>+11,5 % d'abonnés Facebook</li>
+                    </ul>
+                </div>
+                <div class="case-insight">
+                    <strong>Ce que j'en retiens :</strong> Le contenu incarné surperforme systématiquement. Les publications les plus vues mettaient TOUTES des personnes en scène. En événementiel et food, l'humain vend.
+                </div>
+            </div>
+        </div>
+
+        <!-- CAS 3 -->
+        <div class="case-card">
+            <div class="case-left">
+                <div class="case-badge" style="background: var(--accent-pink); color: var(--white);">ASSOCIATIF</div>
+                <h3 class="case-title" style="margin-top: 0;">Orphéopolis</h3>
+                <p class="case-subtitle">+5 000 abonnés en 12 mois • +15 % de dons</p>
+                <div class="case-visual" style="background: linear-gradient(135deg, #FF6B9D 0%, #D63772 100%);">
+                    <div class="case-number">+5000</div>
+                    <div class="case-label">abonnés en 12 mois</div>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Durée</span>
+                        <span class="case-metrics-value">Nov 2022 - Juin 2024</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Engagement</span>
+                        <span class="case-metrics-value">12 % moyen</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Collecte</span>
+                        <span class="case-metrics-value">+15 % dons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-right">
+                <div class="case-strategy">
+                    <h4>Dispositif</h4>
+                    <ul>
+                        <li>Plan de communication annuel</li>
+                        <li>8 capsules vidéo produites (A-Z)</li>
+                        <li>Animation réseaux sociaux (2-3x/semaine)</li>
+                        <li>Stratégie de collecte ciblée</li>
+                        <li>Relations médias & événements</li>
+                    </ul>
+                </div>
+                <div class="case-strategy">
+                    <h4>Résultats</h4>
+                    <ul>
+                        <li>+5 000 abonnés (12 mois)</li>
+                        <li>12 % d'engagement moyen</li>
+                        <li>+15 % de collecte de dons</li>
+                        <li>5+ mentions presse</li>
+                    </ul>
+                </div>
+                <div class="case-insight">
+                    <strong>Ce que j'en retiens :</strong> L'engagement se transforme en dons grâce aux récits incarnés et sincères. L'authenticité + la durée = l'engagement qui convertit.
+                </div>
+            </div>
+        </div>
+
+        <!-- CAS 4 -->
+        <div class="case-card">
+            <div class="case-left">
+                <div class="case-badge" style="background: #00BCD4; color: var(--white);">SANTÉ & PRÉVENTION</div>
+                <h3 class="case-title" style="margin-top: 0;">Vivoptim Solutions</h3>
+                <p class="case-subtitle">1 tunnel de conversion cohérent • Assets alignés</p>
+                <div class="case-visual" style="background: linear-gradient(135deg, #2196F3 0%, #0288D1 100%);">
+                    <div class="case-number">8.7%</div>
+                    <div class="case-label">conversion landing</div>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Format</span>
+                        <span class="case-metrics-value">Display + Email</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Type</span>
+                        <span class="case-metrics-value">Santé / Mutuelles</span>
+                    </div>
+                    <div class="case-metrics-row">
+                        <span class="case-metrics-label">Retention</span>
+                        <span class="case-metrics-value">72 %</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-right">
+                <div class="case-strategy">
+                    <h4>Dispositif</h4>
+                    <ul>
+                        <li>Landing page conversion (promesse + preuve sociale)</li>
+                        <li>Bannières display alignées avec la landing</li>
+                        <li>Email nurturing sequences</li>
+                        <li>Spécifications au pixel près</li>
+                    </ul>
+                </div>
+                <div class="case-strategy">
+                    <h4>Résultats</h4>
+                    <ul>
+                        <li>+42 % inscriptions vs campagne précédente</li>
+                        <li>34 % email open rate</li>
+                        <li>18 % click-through rate</li>
+                        <li>8.7 % landing conversion</li>
+                    </ul>
+                </div>
+                <div class="case-insight">
+                    <strong>Ce que j'en retiens :</strong> La cohérence du message entre bannière → landing → formulaire réduit la friction. C'est le premier levier de conversion, avant même le budget média.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MÉTHODE -->
+<section class="methodology">
+    <h2>🔄 Ma méthode</h2>
+    <p class="methodology-subtitle">Du brief au ROI : une boucle continue</p>
+    
+    <div class="steps-grid">
+        <div class="step">
+            <div class="step-number">01</div>
+            <h4>Comprendre</h4>
+            <ul>
+                <li>Audit audiences</li>
+                <li>Analyse parcours</li>
+                <li>Inventory KPIs</li>
+                <li>Interviews</li>
+            </ul>
+            <div class="step-insight">→ Des données, pas des intuitions</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <h4>Cadrer</h4>
+            <ul>
+                <li>Objectifs SMART</li>
+                <li>Sélection canaux</li>
+                <li>Plan de contenu</li>
+                <li>Budget allocation</li>
+            </ul>
+            <div class="step-insight">→ Chaque euro a un rôle</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <h4>Activer</h4>
+            <ul>
+                <li>Production contenu</li>
+                <li>Lancement campagnes</li>
+                <li>Déploiement organic</li>
+                <li>Coordination équipes</li>
+            </ul>
+            <div class="step-insight">→ Exécution sans faille</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <h4>Mesurer & Itérer</h4>
+            <ul>
+                <li>Dashboards</li>
+                <li>Reporting</li>
+                <li>A/B tests</li>
+                <li>Optimisations</li>
+            </ul>
+            <div class="step-insight">→ Les données guident</div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPÉTENCES -->
+<section class="skills">
+    <div class="skills-section">
+        <h2>🛠️ Domaines clés</h2>
+        
+        <div class="skill-category">
+            <h4>📊 Acquisition digitale</h4>
+            <p>Stratégies multicanales pour capter des audiences qualifiées et alimenter le tunnel.</p>
+        </div>
+
+        <div class="skill-category">
+            <h4>🎯 Lead Generation</h4>
+            <p>Landing pages, formulaires CRM, nurturing : un pipeline qui convertit, pas juste du trafic.</p>
+        </div>
+
+        <div class="skill-category">
+            <h4>💰 Paid Media</h4>
+            <p>Google Ads, Meta Ads, Performance Max : campagnes pilotées au coût par lead.</p>
+        </div>
+
+        <div class="skill-category">
+            <h4>📱 Social Media</h4>
+            <p>Organic + paid, community management, contenus incarnés pour chaque audience.</p>
+        </div>
+
+        <div class="skill-category">
+            <h4>✉️ Email & CRM</h4>
+            <p>Séquences automatisées, segmentation, A/B testing : ouverture, clic, conversion.</p>
+        </div>
+
+        <div class="skill-category">
+            <h4>🔄 Conversion & UX</h4>
+            <p>Landing pages optimisées, user research, funnel CRO : des parcours sans friction.</p>
+        </div>
+
+        <div class="skill-category">
+            <h4>🎪 Événementiel</h4>
+            <p>Conception, activation digitale avant/pendant/après : une couverture 360°.</p>
+        </div>
+
+        <div class="skill-category">
+            <h4>📈 Reporting & Analytics</h4>
+            <p>GA4, dashboards, KPIs, recommendations : tout est mesuré, tout s'optimise.</p>
+        </div>
+    </div>
+
+    <div class="skills-section">
+        <h2>🔧 Stack technologique</h2>
+        
+        <div class="tools-grid">
+            <div class="tool-set">
+                <h5>Analytics & Tracking</h5>
+                <p>GA4 • GTM • Heatmaps • Session Recording</p>
+            </div>
+
+            <div class="tool-set">
+                <h5>Paid Media</h5>
+                <p>Google Ads • Meta Ads • Campaign Optimization</p>
+            </div>
+
+            <div class="tool-set">
+                <h5>CRM & Automation</h5>
+                <p>Salesforce • Email Platforms • Typeform</p>
+            </div>
+
+            <div class="tool-set">
+                <h5>Website & CMS</h5>
+                <p>WordPress • Sitecore • SharePoint</p>
+            </div>
+
+            <div class="tool-set">
+                <h5>SEO & Content</h5>
+                <p>Semrush • Content Planning Tools</p>
+            </div>
+
+            <div class="tool-set">
+                <h5>Data & Reporting</h5>
+                <p>Power BI • Excel • Custom Dashboards</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+    <h2>Parlons résultats.</h2>
+    <p class="contact-intro">
+        Je recherche une opportunité en marketing digital, acquisition et génération de leads.
+        <br/><br/>
+        Je veux mettre mon expérience en stratégie digitale, paid media, conversion et pilotage au service d'une marque à forte visibilité et d'enjeux de croissance.
+    </p>
+
+    <div class="contact-grid">
+        <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-label">Email</div>
+            <div class="contact-info">hcodjia@gmail.com</div>
+        </div>
+
+        <div class="contact-item">
+            <div class="contact-icon">🔗</div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-info">linkedin.com/in/sika-hermina-codjia</div>
+        </div>
+
+        <div class="contact-item">
+            <div class="contact-icon">✨</div>
+            <div class="contact-label">Disponibilité</div>
+            <div class="contact-info">CDI/CDD • Septembre 2026</div>
+        </div>
+    </div>
+
+    <div class="contact-footer">
+        Créé avec ❤️ • Septembre 2026 • Portfolio Sika Hermina C.
+    </div>
+</section>
+
+</body>
+</html>
